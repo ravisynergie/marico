@@ -1,0 +1,12 @@
+RewriteEngine On
+
+RewriteRule ^index.php/(.*)$ /$1 [R=302,L]
+IndexIgnore *
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php|images|robots\.txt)
+RewriteRule ^(.*)$ index.php?/$1 [L]
+
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://www.synergieinsights.com/marico/$1 [R,L]
